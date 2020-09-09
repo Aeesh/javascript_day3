@@ -44,10 +44,46 @@
                 }
             }
         }
-       /* else{
-            alert(prompt('please enter an integer, 1: self  2: others 3: Data 4: Transfer'));
 
-        }*/
+        else if(value===4){
+            var select = prompt('select option to transfer: 1:Airtime 2:Data');
+            select = parseInt(select);
+            if(select===1){
+                var num = prompt('enter phone number');
+                var amount = prompt('enter amount');
+                Var ans = confirm('Transfer #'+ amount +' to' + num + ' ?');
+                if(ans){
+                   alert('your #'+ amount + ' transfer to ' + num + ' was succesful');
+                }
+             }
+             else if(select===2){
+                var num = prompt('enter phone number');
+                var bundle = prompt('select data bundle: 1: 500MB 2: 1GB 3: 2GB');
+                bundle=parseInt(bundle);
+                if(bundle===1){
+                   var ans = confirm('Transfer 500MB data bundle to ' + num + ' ?');
+                   if(ans){
+                   alert('your 500MB data bundle transfer to' + num + ' was succesful');
+                   }
+                }
+           
+               if(bundle===2){
+                   var ans = confirm('Transfer 1GB data bundle to ' + num + ' ?');
+                   if(ans){
+                   alert('your 1GB data bundle transfer to' + num + ' was succesful');
+                   }
+                }
+               if(bundle===3){
+                   var ans = confirm('Transfer 2GB data bundle to ' + num + ' ?');
+                   if(ans){
+                   alert('your 2GB data bundle transfer to' + num + ' was succesful');
+                   }
+
+               }
+ 
+            }
+            
+        }
     </script>
 </body>
 </html>
