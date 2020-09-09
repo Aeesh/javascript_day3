@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       var value =prompt('select option: 1: self  2: others 3: Data 4: Transfer');
+         value=parseInt(value);
+        if(value===1){
+            var amount = prompt('enter amount');
+            alert('your #'+ amount + ' recharge was succesful');
+        }
+        else if(value===2){
+            var num = prompt('enter phone number');
+            var option2 = prompt('enter amount');
+            var ans = confirm('are you sure you want to send #' + option2+ ' recharge to '+ num );
+            if(ans){
+                alert('your #'+ option2 + ' recharge was succesfully sent to:' + num);
+            }  
+        }
+        else if(value===3){
+            var bundle = prompt('select data bundle: 1: 500MB 2: 1GB 3: 2GB');
+            bundle=parseInt(bundle);
+            if(bundle===1){
+                var ans = confirm('subscribe to 500MB data bundle?' );
+                if(ans){
+                    alert('your 500MB data bundle was succesful');
+                }
+            }
+            if(bundle===2){
+                var ans = confirm('subscribe to 1GB data bundle?' );
+                if(ans){
+                    alert('your 1GB data bundle was succesful');
+                }
+            }
+            if(bundle===3){
+                var ans = confirm('subscribe to 3GB data bundle?' );
+                if(ans){
+                    alert('your 3GB data bundle was succesful');
+                }
+            }
+        }
+       /* else{
+            alert(prompt('please enter an integer, 1: self  2: others 3: Data 4: Transfer'));
+
+        }*/
+    </script>
+</body>
+</html>
