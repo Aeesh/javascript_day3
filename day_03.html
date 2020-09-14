@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>js day_03</title>
 </head>
 <body>
     
     <script>
-       var value =prompt('select option: 1: self  2: others 3: Data 4: Transfer');
+       var value =prompt('select option: \n 1: self \n  2: others \n 3: Data \n 4: Transfer');
          value=parseInt(value);
         if(value===1){
             var amount = prompt('enter amount');
@@ -23,7 +23,7 @@
             }  
         }
         else if(value===3){
-            var bundle = prompt('select data bundle: 1: 500MB 2: 1GB 3: 2GB');
+            var bundle = prompt('select data bundle: \n 1: 500MB \n 2: 1GB \n 3: 2GB');
             bundle=parseInt(bundle);
             if(bundle===1){
                 var ans = confirm('subscribe to 500MB data bundle?' );
@@ -46,7 +46,7 @@
         }
 
         else if(value===4){
-            var select = prompt('select option to transfer: 1:Airtime 2:Data');
+            var select = prompt('select option to transfer:\n 1:Airtime \n 2:Data');
             select = parseInt(select);
             if(select===1){
                 var num = prompt('enter phone number');
@@ -55,7 +55,7 @@
                 if(ans){
                    alert('your #'+ amount + ' transfer to ' + num + ' was succesful');
                 }
-             }
+            }
              else if(select===2){
                 var num = prompt('enter phone number');
                 var bundle = prompt('select data bundle: 1: 500MB 2: 1GB 3: 2GB');
