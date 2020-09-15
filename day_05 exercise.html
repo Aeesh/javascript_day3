@@ -8,20 +8,23 @@
 <body>
     <script>
 
-        
-        calc();
        
-        // do{
-        //     var check = confirm('would you like to carry out another operation?');
-        //     if(check){
-        //         calc();
-        //     }
-        //     else{
-        //         alert('you clicked cancel, bye!');
-        //     }
-        // }   
-        // while(check);    
-            
+          
+        // addition function
+        add = (num1, num2) => alert(num1+ '+' + num2 + ' = '+ (num1 + num2));
+        
+        // subtraction function
+        sub = (num1, num2) => alert(num1+ '-' + num2 + ' = '+ (num1 - num2));
+        
+        // multiplication function
+        mul = (num1, num2) => alert(num1+ '*' + num2 + ' = '+ (num1 * num2));
+        
+        // division function
+        div = (num1, num2) => alert(num1+ '/' + num2 + ' = '+ (num1 / num2));
+
+        // calling calc function 
+        calc();
+
         function calc(){
             var value1 = Number(prompt('enter first number'));
             var value2 = Number(prompt('enter second number'));
@@ -54,22 +57,8 @@
             }
         }
 
-        // addition function
-        function add (num1, num2){
-            alert(num1+ '+' + num2 + ' = '+ (num1 + num2));
-        }
-        // subtraction function
-        function sub (num1, num2){
-            alert(num1+ '-' + num2 + ' = '+ (num1 - num2));
-        }
-        // multiplication function
-        function mul (num1, num2){
-            alert(num1+ '*' + num2 + ' = '+ (num1 * num2));
-        }
-        // division function
-        function div (num1, num2){
-            alert(num1+ '/' + num2 + ' = '+ (num1 / num2));
-        }
+        
+        
     </script>
 </body>
 </html>
