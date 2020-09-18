@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+            <div id="content"></div>
+        
+    </table>
+
+    <div id="content"></div>
+    <script>
+       details = [
+            {
+                "name" :"Tiidelab",
+                "email" : "Tiidelab@gmail.com",
+                "phone" : "123456",
+                "location" : "Africa"
+            },
+            {
+                "name" :"kSolutions",
+                "email" : "kSolutions@gmail.com",
+                "phone" : "123456",
+                "location" : "Africa"
+            },
+            {
+                "name" :"techSpecialist",
+                "email" : "techSpecialist@gmail.com",
+                "phone" : "123456",
+                "location" : "Africa"
+            }
+        ];
+
+
+    //  
+let output =  document.getElementById("content");
+        output = `
+        <table>
+        <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Comp Phone</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+        `
+        for(i=0; i<details.length; i++){
+           
+           output += `
+           
+            
+            <tbody>
+                <tr>
+                <td>${i + 1}</td>
+                <td>${details[i].name}</td>
+                <td>${details[i].email}</td>
+                <td>${details[i].phone}</td>
+                <td>${details[i].location}</td>
+            </tr> ` }
+            output += `
+           </tbody>
+           </table>
+           
+         `
+         document.getElementById("content").innerHTML = output;
+//         
+        
+    </script>
+   
+</body>
+</html>

@@ -1,3 +1,4 @@
+/* ARRAY WITH OBJECT DATA */
 details = [
     {
         "name" :"Tiidelab",
@@ -19,6 +20,8 @@ details = [
     }
 ];
 
+    
+    /* DATA TO DISPLAY IN  DOM  */
 display = `
 <table>
 <thead>
@@ -31,6 +34,7 @@ display = `
         </tr>
     </thead>
 `
+/* LOOPING THROUGH THE ARRAY TO DISPLAY  IN  DOM  */
 for(i=0; i<details.length; i++){
    
     display += `
@@ -43,10 +47,13 @@ for(i=0; i<details.length; i++){
         <td>${details[i].email}</td>
         <td>${details[i].phone}</td>
         <td>${details[i].location}</td>
-    </tr> ` }
+        
+    ` }
     display += `
+    </tr>
    </tbody>
    </table>
    
  `
+ /* ASSIGNING VARIABLE TO DISPLAY IN DOM  */
  document.getElementById("table-data").innerHTML = display;
