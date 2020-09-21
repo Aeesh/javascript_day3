@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Main section -->
+    <main>
+        <!-- Table -->
+        <table cellpadding="10px" border="1px">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+
+
+            <tbody id="data">
+                <!-- Where data will be inserted -->
+            </tbody>
+        </table>
+        <div class="buttons">
+            <!-- <input id="input" type="button" value="Add"> -->
+            <button onclick="add()">ADD</button>
+
+            <input id="delete" type="button" value="Delete">
+        </div>
+    </main>
+    <script>
+        // Object definitions
+        tiidelab = {
+            "SN": 1,
+            "name": "TIIDELab",
+            "email": "tiidelab@email.com",
+            "phoneNumber": "+2348023451248",
+            "location": "Nigeria"
+        }
+
+        apple = {
+            "SN": 2,
+            "name": "Apple",
+            "email": "apple@email.com",
+            "phoneNumber": "+1202958555325",
+            "location": "USA"
+        }
+
+        uber = {
+            "SN": 3,
+            "name": "Uber",
+            "email": "uber@email.com",
+            "phoneNumber": "+1475503381416",
+            "location": "London"
+        }
+
+        martreach = {
+            "SN": 4,
+            "name": "MartReach",
+            "email": "martreach@email.com",
+            "phoneNumber": "+2348064413466",
+            "location": "Abuja"
+        }
+
+
+        // Putting objects in array
+        companies = [tiidelab, apple, uber, martreach]
+
+        // Defining content
+        cont = ``
+
+        // Loop to go through all the objects in the array
+        for (i = 0; i < companies.length; i++) {
+            // Concatenating the table row into content
+            cont += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${companies[i].name}</td>
+                    <td>${companies[i].email}</td>
+                    <td>${companies[i].phoneNumber}</td>
+                    <td>${companies[i].location}</td>
+                </tr>`
+        }
+        // targeting id in tbody and adding content in it.
+        document.getElementById('data').innerHTML = cont;
+
+        // function to add more data to the array
+        const add = () => {
+            newInput = {
+                "SN": companies.length + 1,
+                "name": prompt("Enter Company Name:"),
+                "email": prompt("Enter Email:"),
+                "phoneNumber": prompt("Enter Phone Number:"),
+                "location": prompt("Enter Location:")
+            }
+            companies.push(newInput)
+
+            //appends new object to array
+            for (i = companies.length - 1; i < companies.length; i++) {
+                cont += `
+                 <tr>
+                    <td>${i + 1}</td>
+                    <td>${companies[i].name}</td>
+                    <td>${companies[i].email}</td>
+                    <td>${companies[i].phoneNumber}</td>
+                    <td>${companies[i].location}</td>
+                </tr>`
+
+            }
+            document.getElementById('data').innerHTML = cont;
+        }
+
+        // function to delete data from the array
+        const del = () => {
+            companies.pop()
+
+            //displays array after delete
+            cont = ``
+            for (i = 0; i < companies.length; i++) {
+
+                cont += `
+                 <tr>
+                    <td>${i + 1}</td>
+                    <td>${companies[i].name}</td>
+                    <td>${companies[i].email}</td>
+                    <td>${companies[i].phoneNumber}</td>
+                    <td>${companies[i].location}</td>
+                </tr>`
+
+            }
+            document.getElementById('data').innerHTML = cont;
+        }
+
+        // // Click event for the add button
+        // document.getElementById('input').addEventListener('click', add)
+
+        // Click event for the delete button
+        document.getElementById('delete').addEventListener('click', del)
+
+    </script>
+</body>
+</html>
