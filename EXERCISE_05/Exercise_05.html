@@ -7,20 +7,26 @@
     <title>Local Storage Exercise</title>
 </head>
 <body>
-   <div id="profile"></div>
    
-    <form>
-    <input type="text" id="name" placeholder="enter name">
-    <input type="email" id="email" placeholder="enter email">
-    <input type="tel" id="tel" placeholder="phone number">
-    <select name="" id="stack">
-        <option value="FRONTEND">FRONTEND</option>
-        <option value="BACKEND">BACKEND</option>
-    </select>
-    <input type="file" id="pix">
-</form>
+    <div class="wrap">
+        <div class="form-con">
+            <form>
+                <input type="text" id="name" placeholder="enter name">
+                <input type="email" id="email" placeholder="enter email">
+                <input type="tel" id="tel" placeholder="phone number">
+                <select name="" id="stack">
+                    <option value="FRONTEND">FRONTEND</option>
+                    <option value="BACKEND">BACKEND</option>
+                </select>
+                <input type="file" id="pix">
+            </form>
+        <button onclick="add()" class="btn">Add Profile</button>
+    
+        </div>
+       <div id="profile"></div>
+    </div>
 
-   <button onclick="add()" class="btn">Add Profile</button>
+
     <script src="Exercise_05.js"></script>
 
 

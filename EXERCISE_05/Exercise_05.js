@@ -1,5 +1,5 @@
 
-     data = JSON.parse(localStorage.getItem("companies"))
+     data = JSON.parse(localStorage.getItem("members"))
      if(data == null)
      {
       data = [];
@@ -36,7 +36,7 @@ let output = () => {
     "Pix": document.getElementById("pix").value
     }
     data.push(newData);
-    localStorage.setItem("companies",JSON.stringify(data))
+    localStorage.setItem("members",JSON.stringify(data))
    output();
  }
 //  FUNCTION TO EDIT DATA 
@@ -49,7 +49,7 @@ let output = () => {
          "Pix" :  prompt("upload profile pics",data[id].Pix)
      }
      data[id]= editData;
-     localStorage.setItem("companies",JSON.stringify(data))
+     localStorage.setItem("members",JSON.stringify(data))
     output();
  }
 
@@ -59,7 +59,7 @@ let output = () => {
      if(check){
         data.splice(id,1);
         // localStorage.removeItem("companies[id]")
-        localStorage.setItem("companies",JSON.stringify(data))
+        localStorage.setItem("members",JSON.stringify(data))
         output();
      }
      
