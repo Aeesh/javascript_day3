@@ -34,7 +34,6 @@ for(let detail of details){
         <strong> Phone </strong>: ${detail.phone} <br>
         <strong> Location </strong>: ${detail.location} <br>
         <button onclick="del(${details.indexOf(detail)})" style="background:red">Delete</button>
-        <button onclick="edit()" style="background:yellow">Edit</button>
     </div> `
 }
 document.getElementById("data").innerHTML = display;
@@ -44,7 +43,7 @@ document.getElementById("data").innerHTML = display;
     "name" : prompt('Input Company\'s Name'),
     "email" : prompt('Input Company\'s Email'),
     "phone" : prompt('Input Company\'s Phone'),
-    "location" : prompt('Input Company\'s Phone'),
+    "location" : prompt('Input Company\'s location'),
     "logo": "logo2.jpg"
     }
     
@@ -59,7 +58,6 @@ document.getElementById("data").innerHTML = display;
             <strong> Phone </strong>: ${details[i].phone} <br>
             <strong> Location </strong>: ${details[i].location} <br>
             <button onclick="del(${i})" style="background:red">Delete</button>
-            <button onclick="edit()" style="background:yellow">Edit</button>
         </div>   `
     }
     document.getElementById("data").innerHTML = display;
@@ -78,9 +76,10 @@ del = (x) => {
             <strong> Phone </strong>: ${detail.phone} <br>
             <strong> Location </strong>: ${detail.location} <br>
             <button onclick="del(${details.indexOf(detail)})" style="background:red">Delete</button>
-            <button onclick="edit()" style="background:yellow">Edit</button>
         </div> 
         `
     }
     document.getElementById("data").innerHTML = display;
 }
+
+
