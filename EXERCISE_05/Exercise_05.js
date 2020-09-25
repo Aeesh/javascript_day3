@@ -5,7 +5,7 @@
       data = [];
 
      }
-     
+     // FUNCTION TO DISPLAY DATA
 let output = () => {
     display = "";
     for(let detail of data){
@@ -33,7 +33,7 @@ let output = () => {
     "Email" :document.getElementById("email").value,
     "phone" : document.getElementById("tel").value,
     "Stack" :document.getElementById("stack").value,
-    "Pix": document.getElementById("pix").value
+    "Pix": document.getElementById("pix").value.split("\\")[2],
     }
     data.push(newData);
     localStorage.setItem("members",JSON.stringify(data))
@@ -65,5 +65,4 @@ let output = () => {
      
  }
  
-
 output();
