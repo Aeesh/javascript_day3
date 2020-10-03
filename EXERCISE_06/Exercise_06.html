@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Exercise_06.css">
+    <title>search, edit and update</title>
+</head>
+<body>
+   
+    <div class="wrap">
+        <div class="form-con">
+            <form>
+                
+                <input type="hidden" id="index" >
+
+                <input type="text" id="name" placeholder="enter name">
+                <input type="email" id="email" placeholder="enter email">
+                <input type="text" id="tel" placeholder="phone number">
+                <select name="" id="stack">
+                    <option value="FRONTEND">FRONTEND</option>
+                    <option value="BACKEND">BACKEND</option>
+                </select>
+                <input type="file" id="pix">
+                <p id="found"></p>
+            </form>
+                    <!-- button calling the add function -->
+            <button onclick="add()" class="btn">Add Profile</button>
+
+            <button onclick="update()" class="btn">UPDATE</button>
+
+            <div>
+                <input type="search" placeholder="search name" id="search">
+                <!-- button calling the search function -->
+                <button onclick="allSearch()" >Search Profile</button>
+        
+            </div>
+        </div>
+
+           
+      <div class="profile-con">
+        <div id="profile"></div>
+      </div>
+    </div>
+
+
+   
+    <script src="Exercise_06.js"></script>
+
+
+</body>
+</html>
