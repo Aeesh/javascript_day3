@@ -54,6 +54,7 @@ let output = () => {
      }
    
  }
+ //  FUNCTION TO UPDATE DATA
  function update(){
      id= document.getElementById("index").value
     editData = {
@@ -79,13 +80,14 @@ let output = () => {
      check= confirm(`delete ${data[id].Name}'s  data?`);
      if(check){
         originalData.splice(originalIndex,1);
-        // localStorage.removeItem("companies[id]")
+       
         data = originalData;
         localStorage.setItem("members",JSON.stringify(originalData))
         output();
      }
      
  }
+ //  FUNCTION TO RESET FORM DATA
  function clearForm(){
     document.getElementById("index").value =  ""
     document.getElementById("name").value =  ""
@@ -95,15 +97,15 @@ let output = () => {
     document.getElementById("pix").value =  ""
 
  }
-
+//  FUNCTION TO SEARCH PROFILE DATA
  function allSearch() {
 
      pName = document.getElementById("search").value.toLowerCase();
      data = data.filter(x => x.Name.toLowerCase().includes(pName))
 
-    //  if(data != undefined || data != null) 
+    
      if(data.length >= 1) {
-        // result = document.getElementById('found').innerHTML;
+       
         if(data.length == 1) {
             result = "found " + data.length + " profile with "+ pName;
            
@@ -115,17 +117,10 @@ let output = () => {
          output()
      }
      else {
-        //  alert("found " + pName)
+      
          alert("no record found!")
      }
     
  }
 
-//  function allSearch() {
-//      pName = document.getElementById('search').value;
-//      uname = data.filter(x=>x.Name=="pName")
-//      data = [];
-//      data.push(uname)
-//      output()
-//  }
 output();
