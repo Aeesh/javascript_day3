@@ -1,0 +1,72 @@
+/* 
+==================================
+*********   RESET ****************
+==================================
+ */
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+ html, body {
+     background: #2196F3;
+     padding: 0;
+     margin: 0;
+     line-height: 1.6;
+     font-family: 'Roboto', sans-serif;
+     height: 100%;
+ } 
+ .wrap {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+}
+.profile-con {
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+}
+ #profile {
+     display: grid;
+     grid-template-columns: repeat(3,auto);
+     gap: 10px;
+     margin: 0 auto;
+     padding: .5rem;
+     width: 100%;
+  }
+  
+  #profile div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+  }
+  .btn {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      background: green;
+      color: #fff;
+      padding: .5rem;
+      margin: 2rem;
+  }
+  .form-con {
+      width: 25%;
+      margin: 2rem auto;
+      padding: 5rem 0;
+      padding: 1rem;
+  }
+  form {
+      background-color: rgba(255, 255, 255, 0.8);
+  }
+  input, select {
+      width: 90%;
+      border-radius: 5px;
+      outline: none;
+      padding: .3rem;
+      margin: 1rem;
+  }
+  #search {
+      width: 50%;
+      margin: 0;
+  }
