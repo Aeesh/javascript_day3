@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 8</title>
+    <style>
+        div{
+            width: 800px; 
+            height: 400px; 
+            background: goldenrod;
+        }
+        img{
+            width: 100px; 
+            height: 100px;
+        }
+        p{
+            text-transform: uppercase;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="container" ondragover="dropAble(event)" ondrop="drop(event)"></div>
+     <br>
+
+    <img  id="img1" src="logo1.jpg" alt=""  draggable="true"  ondragstart="drag(event)"> 
+    <img id="img2" src="logo2.jpg" alt=""   draggable="true" ondragstart="drag(event)"  >
+    <img id="img3" src="e.jpg" alt=""   draggable="true" ondragstart="drag(event)"  > 
+    <p id="p1" draggable="true" ondragstart="drag(event)" >hello</p>
+    <button id="btn" draggable="true" ondragstart="drag(event)" >drag me</button>
+</body>
+
+
+<script>
+    function dropAble(e) {
+        e.preventDefault();
+    }
+function drag(e) {
+    
+        // set the data to be dragged dynamically
+    e.dataTransfer.setData("ID", e.target.id);
+    
+}
+
+function drop(e) {
+        e.preventDefault();
+        // get the data to be dragged dynamically
+        let data = e.dataTransfer.getData("ID")
+        let element = document.getElementById(data);
+        
+        // create a copy of the element to be dropped
+        let newElement = document.createElement(element.tagName);
+        // newElement.src = element.src;
+        newElement.id = element.id
+        newElement.style.margin = "8px";
+
+        // get the id of the container holding elements to be dropped
+        con = document.getElementById("container");
+        
+        // checks if tagname of element is same as the copy
+       if(element.tagName == newElement.tagName){
+
+        container.textContent += "my tagName is " + element.tagName + " and my id is " + element.id + " ";
+        
+    }
+    }
+
+</script>
+</html>
