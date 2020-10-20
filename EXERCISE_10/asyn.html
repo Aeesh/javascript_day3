@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+<body>
+
+
+
+
+    
+    <script>
+    createAudio("https://www.bensound.com/bensound-music/bensound-creativeminds.mp3")
+
+    //     // goOut("Aisha")
+    //     // protest()
+        
+    //     goOut("Aisha", function(){
+    //         protest()
+    //     })
+        
+    //     // goOut("Aisha", protest())
+        
+    //     function goOut(name,callback ) {
+    //         setTimeout(()=>{
+    //             console.log(`${name}, go out `);
+    //             callback()
+    //         },2000)
+            
+    //     }
+    //    function protest() {
+    //        console.log("and protest");
+    //    }
+
+            // create audio
+       function createAudio(audioSource, callback)
+       {
+            let audio = document.createElement('audio');
+            let source = document.createElement('source');
+            audio.setAttribute('controls','controls');
+            audio.setAttribute('id','audio');
+            source.src = audioSource;
+            audio.appendChild(source);
+
+            audio.onload = function() {
+            return audio;
+            }
+
+            audio.onerror = function() {
+                return new Error("unable to play audio")
+            }
+            
+            document.body.appendChild(audio);
+            // callback();
+        }
+
+        
+
+    //     function playAudio() {
+    //         document.getElementById('audio').play();
+    //    }
+    </script>
+</body>
+</html>

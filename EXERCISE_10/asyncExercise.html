@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyncExercise</title>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: darkseagreen;
+            position: relative;
+        }
+        #box-text {
+            text-align: center;
+            color: #fff;
+            padding: 5rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="box-text"></p>
+    </div>
+    
+    <script>
+         box(function(){
+            boxText()
+        })
+        
+        function box(callback){
+            box = document.getElementById('box');
+            var boxWidth = 200;
+            setTimeout(()=>{
+                var id = setInterval(animateBox, 5);
+
+                //function to animate box
+                function animateBox() {
+                if (boxWidth == 500) {
+                    clearInterval(id);
+                    callback()
+                } 
+                else {
+                    boxWidth++; 
+                    box.style.width = boxWidth + 'px';  
+                }
+            }    
+            },2000)
+        }
+       
+        //function to display box
+        function boxText(){
+            p= document.getElementById('box-text');
+            p.innerHTML = "hello there!"
+        }
+
+    </script>
+</body>
+</html>
