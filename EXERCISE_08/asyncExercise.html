@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyncExercise</title>
+
+    <style>
+        #box {
+            width: 400px;
+            height: 200px;
+            background: darkseagreen;
+            position: relative;
+            animation-name: example;
+            animation-duration: 3s;  
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
+        /* @keyframes example {
+            from {top: 0px; background-color: yellow;}
+            to {left: 200px;}
+        } */
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="box-text"></p>
+    </div>
+    
+    <script>
+         box(function(){
+            boxText()
+        })
+        function box(callback){
+            elem = document.getElementById('box');
+            var pos = 0;
+            setTimeout(()=>{
+                var id = setInterval(frame, 10);
+                function frame() {
+                if (pos == 350) {
+                clearInterval(id);
+                callback()
+                } else {
+                pos++; 
+                elem.style.top = pos + 'px'; 
+                elem.style.left = pos + 'px'; 
+                }  
+            }    
+            },2000)
+        }
+       
+        function boxText(){
+            p= document.getElementById('box-text');
+            p.innerHTML = "hello there!"
+        }
+
+
+//         function myMove() {
+//             var elem = document.getElementById("myAnimation");   
+//             var pos = 0;
+//             var id = setInterval(frame, 10);
+//             function frame() {
+//                 if (pos == 350) {
+//                 clearInterval(id);
+//                 } else {
+//                 pos++; 
+//                 elem.style.top = pos + 'px'; 
+//                 elem.style.left = pos + 'px'; 
+//                 }
+//             }
+// }
+    </script>
+</body>
+</html>
