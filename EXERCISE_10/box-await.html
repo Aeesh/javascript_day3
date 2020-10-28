@@ -19,14 +19,14 @@
         }
         #box {
             width: 0px;
-            height: 200px;
+            /* height: 400px; */
             background: darkseagreen;
             margin: 0 auto;
         }
-        #box-text {
+        #box-text, #box-text1 {
             text-align: center;
             color: #fff;
-            padding: 5rem;
+            padding: 1rem;
             font-size: 1.5rem;
             text-transform: uppercase;
         }
@@ -37,20 +37,18 @@
    
     <div id="box">
         <p id="box-text"></p>
+        <p id="box-text1"></p>
     </div>
     
     <script>
         // function to display box after clicking
-        // function view() {
-        //         box().then(res => {
-        //         boxText()
-        //     });
-        // }
+        function view() {
+                box()
+        }
        
 
-       box() await boxText();
        //function to display box
-        async function box(){
+        function box(){
            return new Promise(function(resolve,reject){
             box = document.getElementById('box');
             var boxWidth = 0;
@@ -59,10 +57,10 @@
                 var id = setInterval(animateBox, 5);
                 
                 //function to animate box
-                function animateBox() {
+                async function animateBox() {
                 if (boxWidth == 800) {
                     clearInterval(id);
-                //    await(boxWidth);
+                   await  boxText();
                 } 
                 else {
                     boxWidth++; 
@@ -76,7 +74,9 @@
         //function to display text
         function boxText(){
             p= document.getElementById('box-text');
-            p.innerHTML = "hello there!"
+            p1= document.getElementById('box-text1');
+            p.innerHTML = "hello there!"; `<br>`
+            p1.innerHTML +=  "\nI used a rectangle instead!!";
         }
 
     </script>

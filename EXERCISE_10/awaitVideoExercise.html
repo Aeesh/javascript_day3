@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>await Video</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            background: darkseagreen;
+            max-height: 100vh;
+        }
+
+        video {
+            width: 70%;
+            margin: 3rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+    //    createVideo('https://content.videvo.net/videvo_files/video/free/2014-12/originalContent/Orchestral_Cymbal_Mid_Shot_Roll.mp4')
+    //    createVideo('https://content.videvo.net/videvo_files/video/free/2019-03/small_watermarked/190111_08_BuildingsTraffic_Drone.mp4')
+
+       createVideo("https://cdn.videvo.net/videvo_files/video/free/2019-03/small_watermarked/190111_08_BuildingsTraffic_Drone_09_preview.webm")
+
+        // https://www.videvo.net/video/bangkok-cityscape-at-night/456577
+        
+        async function createVideo(videoSource) {
+
+            // Create video and source
+            let video = document.createElement('video')
+            let source = document.createElement('source')
+
+            // Set attributes
+            video.setAttribute('controls', 'controls')
+            video.setAttribute('id', 'video')
+
+            // Add src
+            source.src = videoSource
+            source.type = "audio/mpeg"
+            video.appendChild(source)
+
+            video.onload = await video
+
+            document.body.append(video)
+
+            var videos = document.getElementById('video')
+            const play = await videos.play()
+        }
+    </script>
+</body>
+
+</html> 
