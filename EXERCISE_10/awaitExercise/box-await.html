@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>awaitExercise</title>
+
+    <style>
+        button {
+          background: darkseagreen;
+          color: #fff;
+          font-size: 1.2rem;
+          width: 5rem;
+          padding: .5rem;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          margin: 1rem 50%;
+        }
+        #box {
+            width: 0px;
+            /* height: 400px; */
+            background: darkseagreen;
+            margin: 0 auto;
+        }
+        #box-text, #box-text1 {
+            text-align: center;
+            color: #fff;
+            padding: 1rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="view()">view</button>
+   
+    <div id="box">
+        <p id="box-text"></p>
+        <p id="box-text1"></p>
+    </div>
+    
+    <script>
+        // function to display box after clicking
+        function view() {
+                box()
+        }
+       
+
+       //function to display box
+        function box(){
+           return new Promise(function(resolve,reject){
+            box = document.getElementById('box');
+            var boxWidth = 0;
+            
+            setTimeout(()=>{
+                var id = setInterval(animateBox, 5);
+                
+                //function to animate box
+                async function animateBox() {
+                if (boxWidth == 800) {
+                    clearInterval(id);
+                   await  boxText();
+                } 
+                else {
+                    boxWidth++; 
+                    box.style.width = boxWidth + 'px';  
+                }
+            }    
+            },0)
+           })
+        }
+       
+        //function to display text
+        function boxText(){
+            p= document.getElementById('box-text');
+            p1= document.getElementById('box-text1');
+            p.innerHTML = "hello there!"; `<br>`
+            p1.innerHTML +=  "\nI used a rectangle instead!!";
+        }
+
+    </script>
+</body>
+</html>
