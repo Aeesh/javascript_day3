@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+    
+    <script>
+         createAudio("https://www.bensound.com/bensound-music/bensound-creativeminds.mp3").then(
+             play()
+             ).catch(function(err){
+             alert(err.message())
+         })
+
+         function createAudio(audioSource)
+       {
+           return new Promise(function(resolve, reject){
+            let audio = document.createElement('audio');
+            let source = document.createElement('source');
+            audio.setAttribute('controls','controls');
+            audio.setAttribute('id','audio');
+            source.src = audioSource;
+            source.type = "audio/mpeg"
+            audio.appendChild(source);
+
+            audio.onload = function() {
+                resolve(audio);
+            }
+
+            audio.onerror = function() {
+                reject(new Error("unable to play audio"))
+            }
+            document.body.appendChild(audio);
+           })
+            
+            
+           
+            // callback();
+        }
+        function play() {
+            return new Promise(function(resolve,reject){
+                var audio = document.getElementById("audio");
+                resolve(audio.play());
+            })
+        }
+    </script>
+</body>
+</html>
